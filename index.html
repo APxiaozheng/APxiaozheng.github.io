@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JayMusic</title>
+    <link rel="stylesheet" href="../css/music.css">
+    <link rel="stylesheet" href="../icon图标/iconfont.css">
+</head>
+<!--(点击展开，歌曲可播放)-->
+<body>
+    <div class="navbar">
+        <span class="iconfont icon-vynil"></span>
+        <a href="#" class="logo">JayMusic</a>
+        <ul class="nav">
+            <li class="search">
+                <span class="search-box">
+                    <input type="text" placeholder="搜索功能未完善" class="search">
+                </span>
+            </li>
+            <li><a href="#home">主页</a></li>
+            <li><a href="#rec">推荐</a></li>
+            <li><a href="#love">喜欢</a></li>
+            <li><a href="my.html">我的</a></li>
+            <li><a href="#set">设置</a></li>
+        </ul>
+    </div>
+    <div class="banner-area" id="home">
+        <div class="shelli">
+            <input type="radio" name="music" id="item-1" checked>
+            <input type="radio" name="music" id="item-2">
+            <input type="radio" name="music" id="item-3">
+            <div class="cards">
+                <label class="card" for="item-1" id="song-1">
+                    <img src="../image/jay.avif" alt="">
+                </label>
+                <label class="card" for="item-2" id="song-2">
+                    <img src="../image/范特西.avif" alt="">
+                </label>
+                <label class="card" for="item-3" id="song-3">
+                    <img src="../image/八度空间.avif" alt="">
+                </label>
+            </div>
+            <div class="player">
+                <div class="information">
+                    <div class="info-area" id="text">
+
+                        <label for="" class="song-info" id="song-info-1">
+                            <div class="title">
+                                <audio id="audio1" src="../song/周杰伦 - 可爱女人_EM.flac" style="display:none;"></audio>
+                                <a href="#" id="playPauseBtn1" onclick="playAudio('audio1')"
+                                    class="button1">play/pause</a>
+                            </div>
+                        </label>
+
+                        <label for="" class="song-info" id="song-info-1">
+                            <div class="title">
+                                <audio id="audio2" src="../song/周杰伦 - 爱在西元前_EM.flac" style="display:none;"></audio>
+                                <a href="#" id="playPauseBtn2" onclick="playAudio('audio2')"
+                                    class="button2">play/pause</a>
+                            </div>
+                        </label>
+
+                        <label for="" class="song-info" id="song-info-1">
+                            <div class="title">
+                                <audio id="audio3" src="../song/周杰伦 - 半岛铁盒_EM.flac" style="display:none;"></audio>
+                                <a href="#" id="playPauseBtn3" onclick="playAudio('audio3')"
+                                    class="button3">play/pause</a>
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rec-area" id="rec">
+        <div class="content">
+            <div class="inner">
+                <div class="songSheet">
+                    <div class="songSheet_head">
+                        <span class="subtitle"> 歌 单 推 荐 </span>
+                    </div>
+                    <div class="songSheet_pics">
+                        <ul id="originalList">
+                            <li>
+                                <img src="../image/七里香.avif" alt="" class="songSheet_pic" id="songCover"/>
+                            </li>
+                            <li>
+                                <img src="../image/十一月的肖邦.jpg" alt="" class="songSheet_pic" />
+                            </li>
+                            <li>
+                                <img src="../image/叶惠美.avif" alt="" class="songSheet_pic" />
+                            </li>
+                            <li>
+                                <img src="../image/我很忙.avif" alt="" class="songSheet_pic" />
+                            </li>
+                            <li>
+                                <img src="../image/魔杰座.avif" alt="" class="songSheet_pic" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="songSheet_names">
+                        <ul id="songLists">
+                            <li class="songList" data-list-id="七里香">  
+                                <a href="#" class="songListToggle">七里香</a>  
+                                <ul class="songs" id="initialList" style="display: none;">  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 我的地盘.mp3">我的地盘</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 外婆.mp3">外婆</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 将军.mp3">将军</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 借口.mp3">借口</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 乱舞春秋.mp3">乱舞春秋</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 困兽之斗.mp3">困兽之斗</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 游园会.mp3">游园会</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 止战之殇.mp3">止战之殇</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 七里香.mp3">七里香</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 搁浅.mp3">搁浅</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                </ul>  
+                            </li>  
+                            <li class="songList" data-list-id="十一月的肖邦">  
+                                <a href="#" class="songListToggle">十一月的肖邦</a>  
+                                <ul class="songs" style="display: none;">  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 夜曲_EM.flac">夜曲</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 蓝色风暴_EM.flac">蓝色风暴</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 发如雪_EM.flac">发如雪</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 黑色毛衣_EM.flac">黑色毛衣</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 四面楚歌_EM.flac">四面楚歌</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 枫_EM.flac">枫</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 浪漫手机_EM.flac">浪漫手机</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 逆鳞_EM.flac">逆鳞</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 麦芽糖_EM.flac">麦芽糖</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 珊瑚海_EM.flac">珊瑚海</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 飘移_EM.flac">漂移</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 一路向北_EM.flac">一路向北</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                </ul>  
+                            </li>  
+                            <li class="songList" data-list-id="叶惠美">  
+                                <a href="#" class="songListToggle">叶惠美</a>  
+                                <ul class="songs" style="display: none;">  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 以父之名.flac">以父之名</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 懦夫.flac">懦夫</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 晴天.flac">晴天</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 三年二班.flac">三年二班</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 东风破.flac">东风破</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 你听得到.flac">你听得到</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 同一种调调.flac">同一种调调</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 她的睫毛.flac">她的睫毛</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 爱情悬崖.flac">爱情悬崖</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 梯田.flac">梯田</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 双刀.flac">双刀</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                </ul>  
+                            </li>  
+                            <li class="songList" data-list-id="我很忙">  
+                                <a href="#" class="songListToggle">我很忙</a>  
+                                <ul class="songs" style="display: none;">  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 牛仔很忙.flac">牛仔很忙</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 彩虹.flac">彩虹</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 青花瓷.flac">青花瓷</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 阳光宅男.flac">阳光宅男</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 蒲公英的约定.flac">蒲公英的约定</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 无双.flac">无双</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 我不配.flac">我不配</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 扯.flac">扯</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 甜甜的.flac">甜甜的</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 最长的电影.flac">最长的电影</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li>
+                                </ul>  
+                            </li>  
+                            <li class="songList" data-list-id="魔杰座">  
+                                <a href="#" class="songListToggle">魔杰座</a>  
+                                <ul class="songs" style="display: none;">  
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 龙战骑士.flac">龙战骑士</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 给我一首歌的时间.flac">给我一首歌的时间</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 蛇舞.flac">蛇舞</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 花海.flac">花海</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 魔术先生.flac">魔术先生</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 兰亭序.flac">兰亭序</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 流浪诗人.flac">流浪诗人</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 时光机.flac">时光机</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 乔克叔叔.flac">乔克叔叔</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                    <li style="list-style-type: none;"><a href="#" class="playSong" data-song-url="../song/周杰伦 - 稻香.flac">稻香</a><i class="iconfont icon-aixin1" onclick="toggleLike(this)"></i></li> 
+                                </ul>  
+                            </li>  
+                        </ul>  
+                        <audio id="audioPlayer" preload="auto" style="display: none;"></audio>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="love-area" id="love">
+        <img src="../image/jay.png" alt="" style="width: 400px; height: 300px;">
+        <ul id="likedList">
+            <h1 style="font-family: '楷体';font-size: 60px;">喜欢列表</h1>
+            <p style="font-family: '仿宋';">点击爱心，将喜欢的歌添加进来吧！</p>
+        </ul>
+    </div>
+<script src="../css/song.js"></script>
+</body>
+
+</html>
